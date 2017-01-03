@@ -9,19 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var PipesComponent = (function () {
-    function PipesComponent() {
-        this.title = 'app works!';
+var moment = require('moment');
+var DateService = (function () {
+    function DateService() {
     }
-    PipesComponent = __decorate([
-        core_1.Component({
-            selector: 'supre-pipes',
-            template: require('./pipes.component.html'),
-            styles: [require('./pipes.component.css')]
-        }), 
+    DateService.prototype.dateTime = function (item) {
+        return moment(new Date(item)).format('MMMM D, YYYY HH:mm:ss');
+    };
+    DateService.prototype.date = function (item) {
+        return moment(new Date(item)).format('LL');
+    };
+    DateService.prototype.dateOrDatetime = function (item) {
+        var mValue = moment(new Date(item));
+        if (mValue.hours() > 0 || mValue.minutes() > 0 || mValue.seconds() > 0) {
+            return 'datetime';
+        }
+        else {
+            return 'date';
+        }
+    };
+    DateService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], PipesComponent);
-    return PipesComponent;
+    ], DateService);
+    return DateService;
 }());
-exports.PipesComponent = PipesComponent;
-//# sourceMappingURL=/Users/craigmartin/projects/suprematism-pipes/src/pipes.component.js.map
+exports.DateService = DateService;
+//# sourceMappingURL=/Users/craigmartin/projects/suprematism-pipes/src/date.service.js.map
