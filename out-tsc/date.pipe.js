@@ -9,21 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var date_service_1 = require('./date.service');
+var moment = require('moment');
 var DatePresentationPipe = (function () {
-    function DatePresentationPipe(dateService) {
-        this.dateService = dateService;
+    function DatePresentationPipe() {
     }
-    DatePresentationPipe.prototype.transform = function (item) {
-        var which = this.dateService.dateOrDatetime(item);
-        if (which === 'datetime') {
-            return this.dateService.dateTime(item);
+    DatePresentationPipe.dateTime = function (item) {
+        return moment(new Date(item)).format('MMMM D, YYYY HH:mm:ss');
+    };
+    DatePresentationPipe.date = function (item) {
+        return moment(new Date(item)).format('LL');
+    };
+    DatePresentationPipe.dateOrDatetime = function (item) {
+        var mValue = moment(new Date(item));
+        if (mValue.hours() > 0 || mValue.minutes() > 0 || mValue.seconds() > 0) {
+            return 'datetime';
         }
-        return this.dateService.date(item);
+        return 'date';
+    };
+    DatePresentationPipe.prototype.transform = function (item) {
+        var which = DatePresentationPipe.dateOrDatetime(item);
+        if (which === 'datetime') {
+            return DatePresentationPipe.dateTime(item);
+        }
+        return DatePresentationPipe.date(item);
     };
     DatePresentationPipe = __decorate([
         core_1.Pipe({ name: 'datePresentation' }), 
-        __metadata('design:paramtypes', [date_service_1.DateService])
+        __metadata('design:paramtypes', [])
     ], DatePresentationPipe);
     return DatePresentationPipe;
 }());

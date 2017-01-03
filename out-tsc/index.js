@@ -15,7 +15,6 @@ var common_1 = require('@angular/common');
 var core_1 = require('@angular/core');
 var safe_pipe_1 = require('./safe.pipe');
 var date_pipe_1 = require('./date.pipe');
-var date_service_1 = require('./date.service');
 __export(require('./safe.pipe'));
 __export(require('./date.pipe'));
 var PipesModule = (function () {
@@ -33,9 +32,6 @@ var PipesModule = (function () {
                 safe_pipe_1.SafeUrlPipe,
                 safe_pipe_1.SafeResourceUrlPipe,
                 date_pipe_1.DatePresentationPipe,
-            ],
-            providers: [
-                date_service_1.DateService
             ],
             exports: [
                 safe_pipe_1.SafeHtmlPipe,

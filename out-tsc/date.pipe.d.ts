@@ -1,7 +1,7 @@
 import { PipeTransform } from '@angular/core';
-import { DateService } from './date.service';
 export declare class DatePresentationPipe implements PipeTransform {
-    dateService: DateService;
-    constructor(dateService: DateService);
+    static dateTime(item: any): string;
+    static date(item: any): string;
+    static dateOrDatetime(item: any): string;
     transform(item: any): string;
 }
