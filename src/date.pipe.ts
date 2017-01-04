@@ -20,12 +20,16 @@ export class DatePresentationPipe implements PipeTransform {
     return 'date';
   }
 
-  transform(item) {
+  static getPresentationDate(item) {
     const which: string = DatePresentationPipe.dateOrDatetime(item);
     if (which === 'datetime') {
       return DatePresentationPipe.dateTime(item);
     }
     return DatePresentationPipe.date(item);
+  }
+
+  transform(item) {
+    return DatePresentationPipe.getPresentationDate(item);
   }
 
 }

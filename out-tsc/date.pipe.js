@@ -26,12 +26,15 @@ var DatePresentationPipe = (function () {
         }
         return 'date';
     };
-    DatePresentationPipe.prototype.transform = function (item) {
+    DatePresentationPipe.getPresentationDate = function (item) {
         var which = DatePresentationPipe.dateOrDatetime(item);
         if (which === 'datetime') {
             return DatePresentationPipe.dateTime(item);
         }
         return DatePresentationPipe.date(item);
+    };
+    DatePresentationPipe.prototype.transform = function (item) {
+        return DatePresentationPipe.getPresentationDate(item);
     };
     DatePresentationPipe = __decorate([
         core_1.Pipe({ name: 'datePresentation' }), 
