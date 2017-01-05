@@ -5,11 +5,11 @@ import * as moment from 'moment';
 export class DatePresentationPipe implements PipeTransform {
 
   static dateTime(item) {
-    return moment(new Date(item)).format('MMMM D, YYYY HH:mm:ss');
+    return moment(new Date(item)).format('MMM D, YYYY HH:mm');
   }
 
   static date(item) {
-    return moment(new Date(item)).format('LL');
+    return moment(new Date(item)).format('ll');
   }
 
   static dateOrDatetime(item) {

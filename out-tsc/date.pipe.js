@@ -14,10 +14,10 @@ var DatePresentationPipe = (function () {
     function DatePresentationPipe() {
     }
     DatePresentationPipe.dateTime = function (item) {
-        return moment(new Date(item)).format('MMMM D, YYYY HH:mm:ss');
+        return moment(new Date(item)).format('MMM D, YYYY HH:mm');
     };
     DatePresentationPipe.date = function (item) {
-        return moment(new Date(item)).format('LL');
+        return moment(new Date(item)).format('ll');
     };
     DatePresentationPipe.dateOrDatetime = function (item) {
         var mValue = moment(new Date(item));
