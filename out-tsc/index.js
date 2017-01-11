@@ -12,9 +12,11 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 var common_1 = require('@angular/common');
-var repo_name_component_1 = require('./pipes.component');
 var core_1 = require('@angular/core');
-__export(require('./pipes.component'));
+var safe_pipe_1 = require('./safe.pipe');
+var date_pipe_1 = require('./date.pipe');
+__export(require('./safe.pipe'));
+__export(require('./date.pipe'));
 var PipesModule = (function () {
     function PipesModule() {
     }
@@ -24,14 +26,21 @@ var PipesModule = (function () {
                 common_1.CommonModule,
             ],
             declarations: [
-                repo_name_component_1.PipesComponent,
+                safe_pipe_1.SafeHtmlPipe,
+                safe_pipe_1.SafeStylePipe,
+                safe_pipe_1.SafeScriptPipe,
+                safe_pipe_1.SafeUrlPipe,
+                safe_pipe_1.SafeResourceUrlPipe,
+                date_pipe_1.DatePresentationPipe,
             ],
             exports: [
-                repo_name_component_1.PipesComponent,
+                safe_pipe_1.SafeHtmlPipe,
+                safe_pipe_1.SafeStylePipe,
+                safe_pipe_1.SafeScriptPipe,
+                safe_pipe_1.SafeUrlPipe,
+                safe_pipe_1.SafeResourceUrlPipe,
+                date_pipe_1.DatePresentationPipe,
             ],
-            entryComponents: [
-                repo_name_component_1.PipesComponent,
-            ]
         }), 
         __metadata('design:paramtypes', [])
     ], PipesModule);

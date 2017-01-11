@@ -1,22 +1,33 @@
 import { CommonModule } from '@angular/common';
-import { PipesComponent } from './pipes.component';
 import { NgModule } from '@angular/core';
 
-export * from './pipes.component';
+import { SafeHtmlPipe, SafeStylePipe, SafeScriptPipe, SafeUrlPipe,
+  SafeResourceUrlPipe } from './safe.pipe';
+import { DatePresentationPipe } from './date.pipe';
+
+export * from './safe.pipe';
+export * from './date.pipe';
 
 @NgModule({
     imports: [
         CommonModule,
     ],
     declarations: [
-        PipesComponent,
+        SafeHtmlPipe,
+        SafeStylePipe,
+        SafeScriptPipe,
+        SafeUrlPipe,
+        SafeResourceUrlPipe,
+        DatePresentationPipe,
     ],
     exports: [
-        PipesComponent,
+        SafeHtmlPipe,
+        SafeStylePipe,
+        SafeScriptPipe,
+        SafeUrlPipe,
+        SafeResourceUrlPipe,
+        DatePresentationPipe,
     ],
-    entryComponents: [
-        PipesComponent,
-    ]
 })
 export class PipesModule {
 
