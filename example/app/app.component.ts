@@ -9,4 +9,8 @@ declare var require: any;
 export class AppComponent {
   dateValue: Date = new Date(new Date().toLocaleDateString());
   datetimeValue: Date = new Date();
+  obj = {
+    foo: true,
+    baz: false
+  };
 }

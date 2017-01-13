@@ -15,8 +15,10 @@ var common_1 = require('@angular/common');
 var core_1 = require('@angular/core');
 var safe_pipe_1 = require('./safe.pipe');
 var date_pipe_1 = require('./date.pipe');
+var object_pipe_1 = require('./object.pipe');
 __export(require('./safe.pipe'));
 __export(require('./date.pipe'));
+__export(require('./object.pipe'));
 var PipesModule = (function () {
     function PipesModule() {
     }
@@ -32,6 +34,8 @@ var PipesModule = (function () {
                 safe_pipe_1.SafeUrlPipe,
                 safe_pipe_1.SafeResourceUrlPipe,
                 date_pipe_1.DatePresentationPipe,
+                object_pipe_1.KeysPipe,
+                object_pipe_1.TruthyKeysPipe
             ],
             exports: [
                 safe_pipe_1.SafeHtmlPipe,
@@ -40,6 +44,8 @@ var PipesModule = (function () {
                 safe_pipe_1.SafeUrlPipe,
                 safe_pipe_1.SafeResourceUrlPipe,
                 date_pipe_1.DatePresentationPipe,
+                object_pipe_1.KeysPipe,
+                object_pipe_1.TruthyKeysPipe
             ],
         }), 
         __metadata('design:paramtypes', [])
