@@ -2,4 +2,8 @@
   Date: {{ dateValue | datePresentation }}
   <br>
   Date time: {{ datetimeValue | datePresentation }}
+  <br>
+  Keys for <code>{{ obj | json }}</code> {{ obj | keys }}
+  <br>
+  Truthy keys for <code>{{ obj | json }}</code> {{ obj | truthyKeys }}
 </div>
